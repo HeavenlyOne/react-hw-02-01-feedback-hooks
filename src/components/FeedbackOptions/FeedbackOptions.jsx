@@ -1,8 +1,8 @@
 // import { useState } from "react"
 
-export default function FeedbackOptions({ changeFeedback, feedback }) {
+export default function FeedbackOptions({ changeFeedback, feedback, total, resetFeedback }) {
   const options = Object.keys(feedback);
- 
+
   return (
     <>
       {options.map(option => {
@@ -12,6 +12,11 @@ export default function FeedbackOptions({ changeFeedback, feedback }) {
           </button>
         );
       })}
+      {total > 0 && (
+        <button type="button" onClick={() => resetFeedback()}>
+          Reset
+        </button>
+      )}
     </>
   );
 }

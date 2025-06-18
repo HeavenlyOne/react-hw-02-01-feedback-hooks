@@ -1,15 +1,8 @@
 import Notification from "../Notification/Notification";
 
-export default function Statistics({ feedback }) {
+export default function Statistics({ feedback, posFeed, total }) {
     const {Good: good, Neutral: neutral, Bad: bad} = feedback
-  const countTotalFeedback = () => {
-    return good + neutral + bad;
-    };
-    const countPositiveFeedbackPercentage = () => {
-        return Math.ceil((good / countTotalFeedback()) * 100);
-    }
-    const posFeed = countPositiveFeedbackPercentage()
-    const total = countTotalFeedback()
+
     return total ? (
       <ul>
         <li>Good: {good}</li>
